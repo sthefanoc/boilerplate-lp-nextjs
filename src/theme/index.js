@@ -87,6 +87,9 @@ export default {
     keyFeature: {
       pt: [8, null, 9, null, null, 10],
       pb: ['90px', null, 9, null, null, 10, null, '165px'],
+      // pt: 8,
+      // pb: 8,
+      // pb: ['90px', 8, 9, 9, null, 10, null, '165px'],
     },
     feature: {
       pb: [8, null, 9, null, null, 10, null, '170px'],

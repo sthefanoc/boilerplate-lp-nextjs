@@ -9,17 +9,18 @@ import Avatar1 from 'assets/testimonial/avatar1.png';
 import Avatar2 from 'assets/testimonial/avatar2.png';
 import Avatar3 from 'assets/testimonial/avatar3.png';
 import Avatar4 from 'assets/testimonial/avatar4.png';
+import headerData from 'components/header/header.data';
 
 const data = [
   {
     id: 1,
-    title: 'Modern look & trending design',
+    title: 'Testing look & trending design',
     description:
       'Get working experience to work with this amazing team & in future want to work together for bright future projects and also make deposit to freelancer.',
     avatar: Avatar1,
     name: 'Denny Hilguston',
     designation: '@denny.hil',
-    review: 4,
+    review: 4.7,
   },
   {
     id: 2,
@@ -77,31 +78,62 @@ const responsive = {
 };
 
 const carouselParams = {
-  additionalTransfrom:0,
-  arrows:false,
-  autoPlaySpeed:3000,
-  centerMode:false,
-  className:"",
-  containerClass:"carousel-container",
-  customButtonGroup:<ButtonGroup />,
-  dotListClass:"",
+  additionalTransfrom: 0,
+  arrows: false,
+  autoPlaySpeed: 3000,
+  centerMode: false,
+  className: '',
+  containerClass: 'carousel-container',
+  customButtonGroup: <ButtonGroup />,
+  dotListClass: '',
   draggable: true,
-  focusOnSelect:false,
-  infinite:true,
-  itemClass:"",
+  focusOnSelect: false,
+  infinite: true,
+  itemClass: '',
   keyBoardControl: true,
-  minimumTouchDrag:80,
+  minimumTouchDrag: 80,
   renderButtonGroupOutside: true,
-  renderDotsOutside:false,
-  responsive:responsive,
-  showDots:false,
-  sliderClass:"",
-  slidesToSlide:1,
-}
+  renderDotsOutside: false,
+  responsive: responsive,
+  showDots: false,
+  sliderClass: '',
+  slidesToSlide: 1,
+};
 
 export default function TestimonialCard() {
   return (
-   <h1>Testimonial Card</h1>
+    <section id='testimonial' sx={{ variant: 'section.testimonial' }}>
+      <Container css={{ textAlign: 'center' }}>
+        <SectionHeader
+          slogan='Testimonial'
+          title='This is the testimonial componenent'
+        />
+      </Container>
+      <Box sx={styles.carouselWrapper}>
+        <Carousel {...carouselParams}>
+          {data.map((item) => (
+            <Box sx={styles.reviewCard} key={item.id}>
+              <Rating rating={item.review} />
+              <headerData as='h3' sx={styles.title}>
+                {item.title}
+              </headerData>
+              <Text sx={styles.description}>{item.description}</Text>
+              <div className='card-footer'>
+                <div className='image'>
+                  <Image src={item.avatar} alt='Client image' />
+                </div>
+                <div className='reviewer-info'>
+                  <Heading as='h4' sx={styles.heading}>
+                    {item.name}
+                  </Heading>
+                  <Text sx={styles.designation}>{item.designation}</Text>
+                </div>
+              </div>
+            </Box>
+          ))}
+        </Carousel>
+      </Box>
+    </section>
   );
 }
 
