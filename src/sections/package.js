@@ -1,3 +1,4 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, Container, Box, Flex } from 'theme-ui';
 import { keyframes } from '@emotion/core';
