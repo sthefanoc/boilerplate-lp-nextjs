@@ -1,11 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
 
+import image from '../../public/robopremiado.png';
+
 export default function SEO({
-  description = 'startup product landing page',
-  author = 'JSM',
+  description = 'Página oficial do melhor robô de sorteios no Instagram! Ganhe sorteios esnquanto seu computador faz o trabalho.',
+  author = 'SthefanoC',
   meta,
-  title = 'startup landing title',
+  title = 'Robô Premiado | Ganhe sorteios sem esforço',
 }) {
   const metaData = [
     {
@@ -40,8 +42,12 @@ export default function SEO({
       name: `twitter:description`,
       content: description,
     },
+    {
+      name: `og:image`,
+      content: image,
+    },
   ].concat(meta);
-  
+
   return (
     <Head>
       <title>{title}</title>
@@ -53,6 +59,6 @@ export default function SEO({
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `pt-br`,
   meta: [],
 };

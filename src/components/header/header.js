@@ -4,7 +4,7 @@ import { jsx, Container, Flex, Button } from 'theme-ui';
 import { keyframes } from '@emotion/core';
 import { Link } from 'react-scroll';
 import Logo from 'components/logo';
-import LogoDark from 'assets/logo.svg';
+import LogoDark from 'assets/robopremiado-logo.png';
 import MobileDrawer from './mobile-drawer';
 import menuItems from './header.data';
 
@@ -12,7 +12,7 @@ export default function Header({ className }) {
   return (
     <header sx={styles.header} className={className} id='header'>
       <Container sx={styles.container}>
-        <Logo src={LogoDark} />
+        <Logo sx={styles.logo} src={LogoDark} />
         <Flex as='nav' sx={styles.nav}>
           {menuItems.map((menuItem, i) => (
             <Link
@@ -32,8 +32,12 @@ export default function Header({ className }) {
           className='donate__btn'
           variant='secondary'
           aria-label='Get Started'
+          style={{ marginLeft: 'auto' }}
+          onClick={() => {
+            alert('Disponível em breve');
+          }}
         >
-          Get Started!
+          Ganhe Sorteios!
         </Button>
         <MobileDrawer />
       </Container>
@@ -74,7 +78,7 @@ const styles = {
     '&.sticky': {
       position: 'fixed',
       backgroundColor: 'background',
-      color: '#000000',
+      color: '#FFF',
       boxShadow: '0 1px 2px rgba(0, 0, 0, 0.06)',
       py: 3,
       'nev > a': {
@@ -86,6 +90,9 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
+  },
+  logo: {
+    maxWidth: '6rem',
   },
   nav: {
     mx: 'auto',

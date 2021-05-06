@@ -2,27 +2,39 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Container, Box, Heading, Text, Image, Button } from 'theme-ui';
+
 import BannerImg from 'assets/banner-thumb.png';
 import ShapeLeft from 'assets/shape-left.png';
 import ShapeRight from 'assets/shape-right.png';
 
-export default function Banner() {
+export default function BannerVideo() {
+  const colors = ['#FBBF3D', '#FA537A'];
   return (
     <section sx={styles.banner} id='home'>
       <Container sx={styles.banner.container}>
         <Box sx={styles.banner.contentBox}>
-          <Heading as='h1' variant='heroPrimary'>
-            Best product available in the whole world!
+          <Heading as='h1' sx={styles.banner.heroTitle}>
+            Robô Premiado
           </Heading>
-          <Text as='p' variant='heroSecondary'>
-            Check out our website! If you need an application to do things this
-            is exactly what you're looking for!
+
+          <Text as='p' sx={styles.banner.secondaryText}>
+            Descubra agora mesmo
           </Text>
-          <Button variant='primary'>Explore</Button>
+          <Text as='p' sx={styles.banner.secondaryText}>
+            <b>como ganhar</b>
+          </Text>
+          <Text as='p' sx={styles.banner.secondaryText}>
+            os melhores <span>sorteios</span> no instagram
+          </Text>
+          <Text as='p' sx={styles.banner.secondaryText}>
+            <div>Assita ao vídeo para liberar a página</div>
+          </Text>
+
+          {/* <Button variant='primary'>Explore</Button> */}
         </Box>
-        <Box sx={styles.banner.imageBox}>
+        {/* <Box sx={styles.banner.imageBox}>
           <Image src={BannerImg} alt='banner' />
-        </Box>
+        </Box> */}
       </Container>
     </section>
   );
@@ -42,8 +54,8 @@ const styles = {
       height: '100%',
       width: '100%',
       zIndex: -1,
-      backgroundImage: `url(${ShapeLeft})`,
-      backgroundRepeat: `no-repeat`,
+      // backgroundImage: `url(${ShapeLeft})`,
+      // backgroundRepeat: `no-repeat`,
       backgroundPosition: 'bottom left',
       backgroundSize: '36%',
     },
@@ -55,8 +67,8 @@ const styles = {
       height: '100%',
       width: '100%',
       zIndex: -1,
-      backgroundImage: `url(${ShapeRight})`,
-      backgroundRepeat: `no-repeat`,
+      // backgroundImage: `url(${ShapeRight})`,
+      // backgroundRepeat: `no-repeat`,
       backgroundPosition: 'bottom right',
       backgroundSize: '32%',
     },
@@ -71,6 +83,29 @@ const styles = {
       mx: 'auto',
       textAlign: 'center',
       mb: ['40px', null, null, null, null, 7],
+    },
+    heroTitle: {
+      textTransform: 'uppercase',
+      fontFamily: 'Fredoka One',
+      fontSize: '4rem',
+      background: '-webkit-linear-gradient(#FF0000, #FFFF00)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+    },
+    secondaryText: {
+      fontFamily: 'Kanit',
+      textTransform: 'uppercase',
+      fontSize: '2rem',
+      b: {
+        color: '#FA537A',
+        fontSize: '3rem',
+      },
+      span: {
+        color: '#FA537A',
+      },
+      div: {
+        fontSize: '1.5rem',
+      },
     },
     imageBox: {
       justifyContent: 'center',

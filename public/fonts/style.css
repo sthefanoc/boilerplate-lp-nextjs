@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'LemonMilk';
+    src: url('../public/fonts/LEMONMILK-Bold.otf');
+    src: url('../public/fonts/LEMONMILK-Bold.otf?#iefix') format('embedded-opentype');
+    font-weight: 900;
+    font-style: normal;
+}
