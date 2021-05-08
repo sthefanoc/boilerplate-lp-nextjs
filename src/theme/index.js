@@ -6,7 +6,7 @@ export default {
     heading: '#FFF', // primary heading color
     heading_secondary: '#FFF', // heading color
     background: '#000000', // body background color
-    background_secondary: '#F9FBFD', // secondary background color
+    background_secondary: '#000000', // secondary background color
     border_color: '#0E0E0E', // border color
     yellow: '#FBBF3D', // border color
     primary: '#FA537A', // primary button and link color
@@ -17,11 +17,11 @@ export default {
     // highlight	a background color for highlighting text
     modes: {
       dark: {
-        text: '#fff',
-        background: '#000',
-        primary: '#0cf',
-        secondary: '#09c',
-        muted: '#111',
+        text: '#000',
+        background: '#FFF',
+        primary: '#000',
+        secondary: '#FBBF3D',
+        muted: '#ededed',
       },
     },
   },
@@ -102,8 +102,9 @@ export default {
       overflow: 'hidden',
     },
     testimonial: {
-      pt: [8, null, 8, '70px', null, 8, null, '145px'],
-      pb: ['90px', null, 9, null, null, 10, null, '190px'],
+      mt: '2rem',
+      pt: '2rem',
+      pb: '1rem',
       overflow: 'hidden',
     },
     services: {

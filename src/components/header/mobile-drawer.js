@@ -9,25 +9,22 @@ import {
   FaTwitter,
   FaGithubAlt,
   FaDribbble,
+  FaWhatsapp,
 } from 'react-icons/fa';
 import menuItems from './header.data';
 
 const social = [
   {
-    path: '/',
+    path: 'https://www.facebook.com/robo.premiado',
     icon: <FaFacebookF />,
   },
   {
-    path: '/',
+    path: 'https://www.instagram.com/robo.premiado/',
     icon: <FaTwitter />,
   },
   {
-    path: '/',
-    icon: <FaGithubAlt />,
-  },
-  {
-    path: '/',
-    icon: <FaDribbble />,
+    path: 'http://bit.ly/vendas-robo-premiado',
+    icon: <FaWhatsapp />,
   },
 ];
 
@@ -68,7 +65,14 @@ export default function MobileDrawer() {
             <Box sx={styles.social}>
               {social.map((socialItem, i) => (
                 <Box as='span' key={`social-${i}`} sx={styles.social.icon}>
-                  <Link to={socialItem.path}>{socialItem.icon}</Link>
+                  <a
+                    href={socialItem.path}
+                    target='_blank'
+                    rel='noopenner noreferrer'
+                    style={{ color: '#FA537A', fontSize: '2rem' }}
+                  >
+                    {socialItem.icon}
+                  </a>
                 </Box>
               ))}
             </Box>
@@ -95,7 +99,7 @@ const styles = {
   drawer: {
     width: '100%',
     height: '100%',
-    backgroundColor: 'dark',
+    backgroundColor: '#000',
   },
 
   close: {
@@ -129,16 +133,17 @@ const styles = {
       color: 'text_white',
       py: '15px',
       cursor: 'pointer',
-      borderBottom: '1px solid #e8e5e5',
+      borderBottom: '1px solid #FFF',
       transition: 'all 0.25s',
       '&:hover': {
-        color: 'secondary',
+        color: 'primary',
       },
       '&.active': {
-        color: 'secondary',
+        color: 'primary',
       },
     },
   },
+  // #FA537A
 
   menuFooter: {
     width: '100%',

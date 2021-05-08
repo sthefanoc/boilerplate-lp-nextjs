@@ -16,18 +16,18 @@ import ModalVideo from 'react-modal-video';
 export default function BannerWhyBuy() {
   const colors = ['#FBBF3D', '#FA537A'];
   return (
-    <section sx={styles.banner} id='home'>
+    <section sx={styles.banner} id='por-que-comprar'>
       <Container sx={styles.banner.container}>
         <Box sx={styles.banner.contentBox}>
-          <Heading as='h1' sx={styles.banner.heroTitle}>
+          <Heading as='h2' sx={styles.banner.heroTitle}>
             Por que comprar?
             {/* <Image src={BannerImg} /> */}
           </Heading>
           {/* <ModalVideo channel='custom' url={porquePublico} autoplay={true} /> */}
 
           <Text as='p' sx={styles.banner.secondaryText}>
-            Por que você pode ganhar milhares de prêmios como esses diariamente
-            no Instagram!
+            Por que você pode ganhar <span>milhares de prêmios</span> como esses
+            diariamente no <span>Instagram</span>!
           </Text>
 
           {/* <Button variant='primary'>Explore</Button> */}
@@ -91,6 +91,10 @@ const styles = {
     secondaryText: {
       fontFamily: 'Arial',
       fontSize: '1.5rem',
+      fontWeight: 'bold',
+      span: {
+        color: '#FA537A',
+      },
     },
     // img: {
     //   height: '20vh',
@@ -103,10 +107,12 @@ const styles = {
       justifyContent: 'center',
       textAlign: 'center',
       display: 'inline-flex',
+      alignItems: 'flex-start',
       mb: [0, null, -6, null, null, '-40px', null, -3],
       img: {
         position: 'relative',
-        height: [245, 'auto'],
+        height: 'auto',
+        width: ['100%', '80%'],
       },
     },
   },

@@ -12,6 +12,10 @@ import Avatar3 from 'assets/testimonial/avatar3.png';
 import Avatar4 from 'assets/testimonial/avatar4.png';
 import headerData from 'components/header/header.data';
 
+import ScreenShot01 from 'assets/prova-social-01.jpg';
+import ScreenShot02 from 'assets/prova-social-02.jpg';
+import ScreenShot03 from 'assets/prova-social-03.jpg';
+
 const data = [
   {
     id: 1,
@@ -101,35 +105,19 @@ const carouselParams = {
   slidesToSlide: 1,
 };
 
+const testimonialImages = [ScreenShot01, ScreenShot02, ScreenShot03];
+
 export default function TestimonialCard() {
   return (
-    <section id='testimonial' sx={{ variant: 'section.testimonial' }}>
+    <section id='testemunhos' sx={{ variant: 'section.testimonial' }}>
       <Container css={{ textAlign: 'center' }}>
-        <SectionHeader
-          slogan='Testimonial'
-          title='This is the testimonial componenent'
-        />
+        <SectionHeader slogan='' title='O que estão achando do robô' />
       </Container>
       <Box sx={styles.carouselWrapper}>
         <Carousel {...carouselParams}>
-          {data.map((item) => (
-            <Box sx={styles.reviewCard} key={item.id}>
-              <Rating rating={item.review} />
-              <headerData as='h3' sx={styles.title}>
-                {item.title}
-              </headerData>
-              <Text sx={styles.description}>{item.description}</Text>
-              <div className='card-footer'>
-                <div className='image'>
-                  <Image src={item.avatar} alt='Client image' />
-                </div>
-                <div className='reviewer-info'>
-                  <Heading as='h4' sx={styles.heading}>
-                    {item.name}
-                  </Heading>
-                  <Text sx={styles.designation}>{item.designation}</Text>
-                </div>
-              </div>
+          {testimonialImages.map((item) => (
+            <Box sx={styles.carouselWrapper.imageBox}>
+              <Image src={item} />
             </Box>
           ))}
         </Carousel>
@@ -144,8 +132,21 @@ const styles = {
     justifyContent: 'flex-end',
     flexDirection: 'column',
     alignItems: 'flex-end',
-    mt: '-30px',
+    mt: '1rem',
     px: '15px',
+    imageBox: {
+      justifyContent: 'center',
+      textAlign: 'center',
+      display: 'inline-flex',
+      alignItems: 'flex-start',
+      mb: [0, null, -6, null, null, '-40px', null, -3],
+      img: {
+        position: 'relative',
+        height: 'auto',
+        width: ['80%', '80%'],
+        borderRadius: '1.5rem',
+      },
+    },
     '.carousel-container': {
       width: '100%',
       maxWidth: [

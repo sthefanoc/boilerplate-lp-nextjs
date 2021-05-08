@@ -10,7 +10,9 @@ export default function FeatureCardColumn({
 }) {
   return (
     <Box sx={styles.card}>
-      <Image src={src} altText={altText} sx={styles.img} />
+      <Box sx={styles.card.imageContainer}>
+        <Image src={src} altText={altText} sx={styles.img} />
+      </Box>
       <Box sx={styles.wrapper}>
         <Heading
           sx={styles.wrapper.heroTitle}
@@ -24,23 +26,28 @@ export default function FeatureCardColumn({
 
 const styles = {
   card: {
+    width: '95%',
     display: 'flex',
-    alignItems: ['center', 'flex-start'],
+    alignItems: 'center',
+
     flexDirection: 'column',
     mb: -1,
     textAlign: ['center', null, 'left'],
-    px: [4, null, 0],
+  },
+  imageContainer: {
+    display: 'block',
+    textAlign: 'center',
   },
   img: {
-    mx: ['auto', null, 0],
-    ml: ['auto', null, '-13px'],
+    mx: 'auto',
     mb: -2,
-    width: ['80px', null, null, '90px', null, 'auto'],
+    width: '80%',
   },
   wrapper: {
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
+    textAlign: 'center',
     heroTitle: {
       textTransform: 'uppercase',
       fontFamily: 'Kanit',
@@ -69,6 +76,7 @@ const styles = {
     },
     span: {
       color: '#FA537A',
+      fontWeight: 'bold',
     },
   },
 };

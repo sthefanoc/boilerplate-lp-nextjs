@@ -9,6 +9,7 @@ function Whatsapp() {
       href='http://bit.ly/vendas-robo-premiado'
       sx={styles.float}
       target='_blank'
+      rel='noreferrer noopener'
     >
       <i className='fa fa-whatsapp' sx={styles.myFloat}></i>
     </a>

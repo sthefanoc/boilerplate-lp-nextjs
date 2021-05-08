@@ -10,7 +10,7 @@ import ShapeRight from 'assets/shape-right.png';
 export default function BannerAbout() {
   const colors = ['#FBBF3D', '#FA537A'];
   return (
-    <section sx={styles.banner} id='home'>
+    <section sx={styles.banner} id='sobre-nos'>
       <Container sx={styles.banner.container}>
         <Box sx={styles.banner.contentBox}>
           <Heading as='h1' sx={styles.banner.heroTitle}>

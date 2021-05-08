@@ -49,3 +49,26 @@ label:active:after {
 .hidden{
 	display: none;
 }
+
+/* .row-title.closed{
+	color: white;
+}
+
+.row-title.expanded{
+	color: 'red'
+} */
+
+.faq-row .closed .row-title-text,
+.faq-row .expanded svg{
+	color: #FFF;
+}
+
+.faq-row .expanded .row-title-text,
+.faq-row .expanded svg{
+	color: #FA537A;
+	font-weight: bold;
+}
+
+iframe .vp-controls-wrapper{
+	display: none;
+}

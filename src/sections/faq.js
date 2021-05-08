@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Box, Container } from 'theme-ui';
+import { jsx, Box, Container, Text } from 'theme-ui';
 import React, { useEffect, useState } from 'react';
 import Faq from 'react-faq-component';
 
@@ -41,12 +41,15 @@ const data = {
 };
 
 const styles = {
-  fontFamily: 'Kanit',
+  fontFamily: 'Arial',
   bgColor: 'transparent',
   titleTextColor: 'white',
   rowTitleColor: 'white',
   rowContentColor: '#ededed',
   arrowColor: 'gray',
+  rowTitleTextSize: '1.5rem',
+  rowContentTextSize: '1.2rem',
+  titleTextSize: '3rem',
 };
 
 const allStyles = {
@@ -71,6 +74,12 @@ const allStyles = {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
+      fontSize: '1.5rem',
+    },
+    textBox: {
+      mt: '2rem',
+      color: '#ededed',
+      fontStyle: 'italic',
     },
   },
 };
@@ -81,11 +90,30 @@ const config = {
   tabFocus: true,
 };
 
+// const addColors = () => {
+//   let openedQuestions = document.querySelectorAll('.row-title.expanded');
+//   let closedQuestions = document.querySelectorAll('.row-title.closed');
+//   openedQuestions.forEach((item) => {
+//     item.style.color = 'red';
+//   });
+// };
+
 export default function FaqComponent() {
   return (
-    <section sx={allStyles.faq}>
+    <section sx={allStyles.faq} id='faq'>
       <Container sx={allStyles.faq.container}>
         <Faq data={data} styles={styles} config={config} />
+        <Text sx={allStyles.faq.textBox}>
+          Ainda tem dúvidas? Fale com nosso suporte{' '}
+          <a
+            href='http://bit.ly/vendas-robo-premiado'
+            target='_blank'
+            rel='noopener noreferrer'
+            style={{ color: '#FBBF3D' }}
+          >
+            aqui.
+          </a>
+        </Text>
       </Container>
     </section>
   );

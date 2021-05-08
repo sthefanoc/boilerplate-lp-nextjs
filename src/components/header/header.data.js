@@ -4,15 +4,15 @@ export default [
     label: 'Início',
   },
   {
-    path: 'premios',
-    label: 'Prêmios',
+    path: 'sobre-nos',
+    label: 'Sobre o Robô',
   },
   {
     path: 'testemunhos',
-    label: 'Testemunhos',
+    label: 'O que estão achando?',
   },
   {
-    path: 'contato',
-    label: 'Contato',
+    path: 'diferenciais',
+    label: 'Nosso diferencial',
   },
 ];

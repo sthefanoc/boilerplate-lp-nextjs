@@ -24,6 +24,12 @@ export default function Footer() {
                   key={i}
                   label={item.label}
                   sx={styles.footer.link}
+                  target={item.path.substr(0, 4) == 'http' ? '_blank' : ''}
+                  rel={
+                    item.path.substr(0, 4) == 'http'
+                      ? 'noopenner noreferrer'
+                      : ''
+                  }
                 />
               ))}
             </nav>
@@ -89,6 +95,7 @@ const styles = {
       fontSize: '0.8rem',
     },
     copyright: {
+      mt: '3rem',
       fontSize: [1, '15px'],
       width: '100%',
     },

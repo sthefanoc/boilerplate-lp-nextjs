@@ -16,7 +16,7 @@ import ModalVideo from 'react-modal-video';
 export default function BannerBenefits() {
   const colors = ['#FBBF3D', '#FA537A'];
   return (
-    <section sx={styles.banner} id='home'>
+    <section sx={styles.banner} id='beneficios'>
       <Container sx={styles.banner.container}>
         <Box sx={styles.banner.contentBox}>
           <Heading

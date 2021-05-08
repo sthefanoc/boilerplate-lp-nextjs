@@ -31,7 +31,7 @@ const data = [
     id: 3,
     imgSrc: SuporteDedicado,
     altText: 'Suporte dedicado',
-    title: 'Suporte dedicado',
+    title: '<span>Suporte</span> dedicado',
     text:
       'Sem dores de cabeça! Nosso time está preparado para sanar suas dúvidas e te ajudar a ganhar sorteios!',
   },
@@ -39,7 +39,7 @@ const data = [
     id: 4,
     imgSrc: Funciona24h,
     altText: 'Funciona 24h',
-    title: 'Funciona 24h',
+    title: 'Funciona <span>24h</span>',
     text:
       'Já pensou em ganhar sorteios dormindo? O Robô Premiado funciona 24 horas por dia!.',
   },
@@ -47,11 +47,11 @@ const data = [
 
 export default function KeyFeature() {
   return (
-    <section sx={{ variant: 'section.keyFeature' }} id='feature'>
+    <section sx={{ variant: 'section.keyFeature' }} id='diferenciais'>
       <Container>
         <SectionHeader
           slogan=''
-          title='Diferencial do robô premiado'
+          title='Diferenciais'
           // sx={styles.grid.heroTitle}
         />
         <Grid sx={styles.grid}>
@@ -110,7 +110,7 @@ const styles = {
         // maxWidth: '100%',
 
         height: 'auto',
-        width: '80%',
+        width: ['100%', '80%'],
         // maxWidth: ['100%', '70%'],
         maxWidth: '100%',
       },

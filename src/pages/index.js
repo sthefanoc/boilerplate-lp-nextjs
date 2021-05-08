@@ -13,7 +13,7 @@ import WorkFlow from '../sections/workflow';
 import Package from '../sections/package';
 import TeamSection from '../sections/team-section';
 import TestimonialCard from '../sections/testimonial';
-import BannerVideo from '../sections/service-section-banner';
+import BannerVideo from '../sections/banner-video';
 import BannerAbout from '../sections/banner-about-us';
 import BannerWhy from '../sections/banner-why';
 import BannerWhyBuy from '../sections/banner-why-buy';
@@ -41,9 +41,9 @@ export default function IndexPage() {
         <BannerWhy />
         <BannerBenefits />
         <KeyFeature />
-        <CoreFeature />
+        {/* <CoreFeature /> */}
         <BannerWhyBuy />
-
+        <TestimonialCard />
         <FaqSection />
 
         {/* <StateSwitch /> */}

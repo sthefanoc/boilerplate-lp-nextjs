@@ -1,24 +1,24 @@
 export default {
   menuItem: [
     {
-      path: '/',
+      path: '#banner-video',
       label: 'Início',
     },
     {
-      path: '/',
+      path: 'https://www.instagram.com/robo.premiado/',
       label: 'Instagram',
     },
     {
-      path: '/',
+      path: 'http://bit.ly/vendas-robo-premiado',
       label: 'Suporte',
     },
     {
-      path: '/',
+      path: '#faq',
       label: 'Dúvidas',
     },
     {
-      path: '/',
-      label: 'Contato',
+      path: '#testemunhos',
+      label: 'Testemunhos',
     },
   ],
 };
