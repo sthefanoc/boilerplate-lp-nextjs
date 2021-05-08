@@ -1,47 +1,47 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
+import { jsx, Box, Image } from 'theme-ui';
 import { Container, Grid } from 'theme-ui';
 import SectionHeader from '../components/section-header';
 import FeatureCardColumn from 'components/feature-card-column.js';
-import Performance from 'assets/key-feature/performance.svg';
-import Partnership from 'assets/key-feature/partnership.svg';
-import Subscription from 'assets/key-feature/subscription.svg';
-import Support from 'assets/key-feature/support.svg';
+import SoComputador from 'assets/so-computador.jpg';
+import FacilUsar from 'assets/facil-de-usar.png';
+import SuporteDedicado from 'assets/suporte-dedicado.png';
+import Funciona24h from 'assets/funciona-24h.png';
 import FeatureCard from 'components/feature-card';
 
 const data = [
-  {
-    id: 1,
-    imgSrc: Performance,
-    altText: 'Fast Performance',
-    title: 'Fast Performance',
-    text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
-  },
+  // {
+  //   id: 1,
+  //   imgSrc: Performance,
+  //   altText: 'Só precisa de um computador',
+  //   title: 'Só precisa de um computador',
+  //   text:
+  //     'Sem necessidade de sistemas complicados. Apenas um computador com acesso a internet.',
+  // },
   {
     id: 2,
-    imgSrc: Partnership,
-    altText: 'Partnership deal',
-    title: 'Partnership deal',
+    imgSrc: FacilUsar,
+    altText: 'Fácil de usar',
+    title: '<span>Fácil</span> de usar',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Em poucos minutos, com as instruções em vídeo de nossos especialistas você já vai dominar a ferramenta.',
   },
   {
     id: 3,
-    imgSrc: Subscription,
-    altText: 'Pro Subscription',
-    title: 'Pro Subscription',
+    imgSrc: SuporteDedicado,
+    altText: 'Suporte dedicado',
+    title: 'Suporte dedicado',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Sem dores de cabeça! Nosso time está preparado para sanar suas dúvidas e te ajudar a ganhar sorteios!',
   },
   {
     id: 4,
-    imgSrc: Support,
-    altText: 'Customer Support',
-    title: 'Customer Support',
+    imgSrc: Funciona24h,
+    altText: 'Funciona 24h',
+    title: 'Funciona 24h',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Já pensou em ganhar sorteios dormindo? O Robô Premiado funciona 24 horas por dia!.',
   },
 ];
 
@@ -50,8 +50,9 @@ export default function KeyFeature() {
     <section sx={{ variant: 'section.keyFeature' }} id='feature'>
       <Container>
         <SectionHeader
-          slogan='Key Feature'
-          title='This is the Key Feature Component'
+          slogan=''
+          title='Diferencial do robô premiado'
+          // sx={styles.grid.heroTitle}
         />
         <Grid sx={styles.grid}>
           {data.map((item) => (
@@ -64,6 +65,9 @@ export default function KeyFeature() {
             />
           ))}
         </Grid>
+        <Box sx={styles.grid.imageBox}>
+          <Image src={SoComputador} sx={styles.grid.imageBox.smallImg} />
+        </Box>
       </Container>
     </section>
   );
@@ -87,7 +91,39 @@ const styles = {
       null,
       'repeat(2,1fr)',
       null,
-      'repeat(4,1fr)',
+      'repeat(3,1fr)',
     ],
+    imageBox: {
+      justifyContent: 'center',
+      textAlign: 'center',
+      alignItems: 'flex-start',
+      display: 'inline-flex',
+      mb: [0, null, -6, null, null, '-40px', null, -3],
+      smallImg: {
+        mt: ['2rem', '3rem'],
+        width: ['45%', '50%'],
+      },
+      img: {
+        position: 'relative',
+        // height: [245, 'auto'],
+        // height: '50vh',
+        // maxWidth: '100%',
+
+        height: 'auto',
+        width: '80%',
+        // maxWidth: ['100%', '70%'],
+        maxWidth: '100%',
+      },
+    },
+    // heroTitle: {
+    //   textTransform: 'uppercase',
+    //   fontFamily: 'Kanit',
+    //   fontSize: '2rem',
+    //   color: 'red',
+    // },
+    // secondaryText: {
+    //   fontFamily: 'Arial',
+    //   fontSize: '1.5rem',
+    // },
   },
 };

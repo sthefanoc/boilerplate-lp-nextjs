@@ -5,8 +5,8 @@ import { Container, Box, Heading, Text, Image, Button } from 'theme-ui';
 
 // import porquePublico from 'assets/porquePublico.mp4';
 
-import aviao from 'assets/aviao.webp';
-import grafico from 'assets/grafico.webp';
+import aviao from 'assets/aviao.png';
+import grafico from 'assets/grafico.png';
 
 import ShapeLeft from 'assets/shape-left.png';
 import ShapeRight from 'assets/shape-right.png';
@@ -19,23 +19,31 @@ export default function BannerBenefits() {
     <section sx={styles.banner} id='home'>
       <Container sx={styles.banner.container}>
         <Box sx={styles.banner.contentBox}>
-          <Heading as='h2' sx={styles.banner.heroTitle}>
+          <Heading
+            as='h2'
+            sx={styles.banner.heroTitle}
+            style={{ marginBottom: '2rem' }}
+          >
             Benefícios
           </Heading>
           {/* <ModalVideo channel='custom' url={porquePublico} autoplay={true} /> */}
 
-          <Image src={aviao} />
-          <Image src={grafico} />
+          <Box sx={styles.banner.imageBox}>
+            <Image src={aviao} />
+          </Box>
+          <Box sx={styles.banner.imageBox}>
+            <Image src={grafico} sx={styles.banner.imageBox.smallImg} />
+          </Box>
 
-          <Heading
+          {/* <Heading
             as='h3'
             sx={styles.banner.heroTitle}
-            style={{ marginTop: '10rem' }}
+            style={{ marginTop: '10rem', fontSize: '2.5rem' }}
           >
             Só precisa de um computador.
-          </Heading>
+          </Heading> */}
 
-          {/* <Button variant='primary'>Explore</Button> */}
+          {/* <x1 variant='primary'>Explore</x1> */}
         </Box>
         {/* <Box sx={styles.banner.imageBox}>
           <Image src={BannerImg} alt='banner' />
@@ -47,7 +55,7 @@ export default function BannerBenefits() {
 
 const styles = {
   banner: {
-    pt: 10,
+    pt: 2,
     pb: [2, null, 0, null, 2, 0, null, 5],
     position: 'relative',
     zIndex: 2,
@@ -84,7 +92,7 @@ const styles = {
       justifyContent: 'center',
     },
     contentBox: {
-      width: ['100%', '90%', '535px', null, '57%', '60%', '68%', '60%'],
+      width: ['100%', '90%', '535px', null, '80%', '80%', '80%', '80%'],
       mx: 'auto',
       textAlign: 'center',
       mb: ['40px', null, null, null, null, 7],
@@ -98,17 +106,24 @@ const styles = {
       fontFamily: 'Arial',
       fontSize: '1.5rem',
     },
-    img: {
-      height: '100vh',
-    },
     imageBox: {
       justifyContent: 'center',
       textAlign: 'center',
+      alignItems: 'flex-start',
       display: 'inline-flex',
       mb: [0, null, -6, null, null, '-40px', null, -3],
+      smallImg: {
+        mt: ['2rem', '3rem'],
+        width: ['45%', '50%'],
+      },
       img: {
         position: 'relative',
-        height: [245, 'auto'],
+        // height: [245, 'auto'],
+        // height: '50vh',
+        // maxWidth: '100%',
+        height: 'auto',
+        // maxWidth: ['100%', '70%'],
+        maxWidth: '100%',
       },
     },
   },

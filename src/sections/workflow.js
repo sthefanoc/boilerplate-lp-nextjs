@@ -27,12 +27,6 @@ const data = [
     text:
       'Get your blood tests delivered at home collect a sample from the your blood tests.',
   },
-  {
-    id: 4,
-    title: 'Customer receives funds payment',
-    text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
-  },
 ];
 
 export default function WorkFlow() {

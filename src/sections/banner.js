@@ -27,7 +27,7 @@ export default function BannerVideo() {
             os melhores <span>sorteios</span> no instagram
           </Text>
           <Text as='p' sx={styles.banner.secondaryText}>
-            <div>Assita ao vídeo para liberar a página</div>
+            <div>Assista ao vídeo para liberar a página</div>
           </Text>
 
           {/* <Button variant='primary'>Explore</Button> */}
@@ -87,7 +87,7 @@ const styles = {
     heroTitle: {
       textTransform: 'uppercase',
       fontFamily: 'Fredoka One',
-      fontSize: '4rem',
+      fontSize: [10, 70],
       background: '-webkit-linear-gradient(#FF0000, #FFFF00)',
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
@@ -95,16 +95,16 @@ const styles = {
     secondaryText: {
       fontFamily: 'Kanit',
       textTransform: 'uppercase',
-      fontSize: '2rem',
+      fontSize: [6, 40],
       b: {
         color: '#FA537A',
-        fontSize: '3rem',
+        fontSize: [8, 50],
       },
       span: {
         color: '#FA537A',
       },
       div: {
-        fontSize: '1.5rem',
+        fontSize: [4, 35],
       },
     },
     imageBox: {
@@ -115,6 +115,8 @@ const styles = {
       img: {
         position: 'relative',
         height: [245, 'auto'],
+        ml: 10,
+        mr: 10,
       },
     },
   },

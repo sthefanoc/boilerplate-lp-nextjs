@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ThemeProvider } from 'theme-ui';
 import theme from 'theme';
 
@@ -16,10 +16,21 @@ import TestimonialCard from '../sections/testimonial';
 import BannerVideo from '../sections/service-section-banner';
 import BannerAbout from '../sections/banner-about-us';
 import BannerWhy from '../sections/banner-why';
+import BannerWhyBuy from '../sections/banner-why-buy';
 import BannerBenefits from '../sections/banner-benefits';
+import FaqSection from '../sections/faq';
 import StateSwitch from '../components/helpers/state-switch';
 
 export default function IndexPage() {
+  useEffect(() => {
+    try {
+      document
+        .querySelector('#__next-prerender-indicator')
+        .classList.add('hidden');
+    } catch {
+      console.log('did not find next btn');
+    }
+  }, []);
   return (
     <ThemeProvider theme={theme}>
       <Layout>
@@ -29,11 +40,17 @@ export default function IndexPage() {
         <BannerAbout />
         <BannerWhy />
         <BannerBenefits />
-        <StateSwitch />
+        <KeyFeature />
+        <CoreFeature />
+        <BannerWhyBuy />
+
+        <FaqSection />
+
+        {/* <StateSwitch /> */}
         {/* <KeyFeature />
         <ServiceSection />
         <Feature />
-        <CoreFeature />
+        
         <WorkFlow />
         <Package />
         <TeamSection />

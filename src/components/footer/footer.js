@@ -28,6 +28,17 @@ export default function Footer() {
               ))}
             </nav>
           </Box>
+          <Text sx={styles.footer.disclaimer} style={{ fontStyle: 'italic' }}>
+            Os dados e informações apresentadas na página são relatados por
+            nossos clientes. O robô premiado tem a função de potencializar as
+            suas chances, mas não garante que o resultado será igual a todos. Os
+            resultados do produto podem variar por fatores externo e individuais
+            dos usuários e o resultado é de responsabilidade dele. As
+            informações apresentadas foram fornecidas e autorizadas por nossos
+            clientes, destinada a passar algumas das experiências dos usuários.
+            Não possuímos vínculos com páginas no Facebook e com outros produtos
+            de natureza similar.
+          </Text>
           <Text sx={styles.footer.copyright}>
             Copyright by {new Date().getFullYear()} Robô Premiado
           </Text>
@@ -73,6 +84,9 @@ const styles = {
       ':hover': {
         color: 'primary',
       },
+    },
+    disclaimer: {
+      fontSize: '0.8rem',
     },
     copyright: {
       fontSize: [1, '15px'],

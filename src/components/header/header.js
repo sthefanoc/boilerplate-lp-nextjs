@@ -28,17 +28,17 @@ export default function Header({ className }) {
             </Link>
           ))}
         </Flex>
-        <Button
-          className='donate__btn'
-          variant='secondary'
-          aria-label='Get Started'
-          style={{ marginLeft: 'auto' }}
-          onClick={() => {
-            alert('Disponível em breve');
-          }}
-        >
-          Ganhe Sorteios!
-        </Button>
+        <a href='https://app.monetizze.com.br/checkout/PDP172047'>
+          <Button
+            className='donate__btn'
+            variant='secondary'
+            aria-label='Get Started'
+            style={{ marginLeft: 'auto' }}
+          >
+            Ganhe Sorteios!
+          </Button>
+        </a>
+
         <MobileDrawer />
       </Container>
     </header>
@@ -93,6 +93,8 @@ const styles = {
   },
   logo: {
     maxWidth: '6rem',
+    height: 'auto',
+    alignItems: 'flex-start',
   },
   nav: {
     mx: 'auto',

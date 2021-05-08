@@ -19,8 +19,8 @@ export default function BannerAbout() {
 
           <Text as='p' sx={styles.banner.secondaryText}>
             Depois de anos de desenvolvimento e estudos sobre sorteios no
-            Instagram nossa equipe percebeu que seria possível criar um robô que
-            pudesse aumentar nossas chances de ganhar alguns dos milhares de
+            Instagram, nossa equipe percebeu que seria possível criar um robô
+            que pudesse aumentar nossas chances de ganhar alguns dos milhares de
             sorteios que acontecem diariamente. O principal objetivo é criar
             chances reais de ganhar qualquer sorteio, desde o menos concorrido
             até o mais disputado.
@@ -83,7 +83,7 @@ const styles = {
     heroTitle: {
       textTransform: 'uppercase',
       fontFamily: 'Kanit',
-      fontSize: '5rem',
+      fontSize: '3rem',
     },
     secondaryText: {
       fontFamily: 'Arial',

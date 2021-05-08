@@ -4,16 +4,16 @@ import { jsx, Container, Box, Image } from 'theme-ui';
 import TextFeature from 'components/text-feature';
 // import Image from 'components/image';
 
-import FeatureThumb from 'assets/core-feature.png';
+import FeatureThumb from 'assets/facildeusar.png';
 import shapePattern from 'assets/shape-pattern2.png';
 
 const data = {
-  subTitle: 'Core features',
-  title: 'Smart Jackpots that you may love this anytime & anywhere',
+  subTitle: 'Fácil de usar',
+  title: 'Só precisa de um computador',
   description:
-    'Get your tests delivered at let home collect sample from the victory of the managements that supplies best design system guidelines ever.',
-  btnName: 'Get Started',
-  btnURL: '#',
+    'Sem configurações complicadas. Apenas um computador que seja capaz de acessar o Google Chrome já resolve tudo que o robô precisa para funcionar. Não fique fora dessa.',
+  btnName: 'Ganhar Sorteios!',
+  btnURL: 'https://app.monetizze.com.br/checkout/PDP172047',
 };
 
 export default function CoreFeature() {
@@ -31,9 +31,9 @@ export default function CoreFeature() {
         </Box>
         <Box sx={styles.thumbnail}>
           <Image src={FeatureThumb} alt='Thumbnail' />
-          <Box sx={styles.shapeBox}>
+          {/* <Box sx={styles.shapeBox}>
             <Image src={shapePattern} alt='Shape' />
-          </Box>
+          </Box> */}
         </Box>
       </Container>
     </section>
@@ -63,11 +63,11 @@ const styles = {
     display: 'inline-flex',
     position: 'relative',
     mr: 'auto',
-    ml: ['auto', null, null, null, 7],
+    ml: ['auto', null, null, null, null],
     '> img': {
       position: 'relative',
       zIndex: 1,
-      height: [310, 'auto'],
+      height: [250, 400],
     },
   },
   shapeBox: {

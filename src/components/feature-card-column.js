@@ -12,8 +12,11 @@ export default function FeatureCardColumn({
     <Box sx={styles.card}>
       <Image src={src} altText={altText} sx={styles.img} />
       <Box sx={styles.wrapper}>
-        <Heading sx={styles.wrapper.title}>{title}</Heading>
-        <Text sx={styles.wrapper.subTitle}>{text}</Text>
+        <Heading
+          sx={styles.wrapper.heroTitle}
+          dangerouslySetInnerHTML={{ __html: `${title}` }}
+        />
+        <Text sx={styles.wrapper.secondaryText}>{text}</Text>
       </Box>
     </Box>
   );
@@ -38,6 +41,20 @@ const styles = {
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
+    heroTitle: {
+      textTransform: 'uppercase',
+      fontFamily: 'Kanit',
+      fontSize: '2rem',
+      lineHeight: 1.4,
+      mt: '1.5rem',
+      pt: '1rem',
+      pb: '1rem',
+    },
+    secondaryText: {
+      fontFamily: 'Arial',
+      fontSize: '1.5rem',
+      lineHeight: '2.3',
+    },
     title: {
       fontSize: 3,
       color: 'heading_secondary',
@@ -49,6 +66,9 @@ const styles = {
       fontSize: 1,
       fontWeight: 400,
       lineHeight: '1.9',
+    },
+    span: {
+      color: '#FA537A',
     },
   },
 };

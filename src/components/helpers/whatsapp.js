@@ -6,7 +6,7 @@ import React from 'react';
 function Whatsapp() {
   return (
     <a
-      href='https://api.whatsapp.com/send?phone=5511987998135&text=Ol%C3%A1!%20Gostaria%20de%20comprar%20minha%20licen%C3%A7a%20para%20rob%C3%B4%20premiado!'
+      href='http://bit.ly/vendas-robo-premiado'
       sx={styles.float}
       target='_blank'
     >

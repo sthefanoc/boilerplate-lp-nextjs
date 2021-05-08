@@ -67,8 +67,7 @@ export default function BannerVideo() {
   };
   const handleClick = (e) => {
     e.preventDefault();
-    // setVideoOpen(true);
-    alert('Video disponível em breve!');
+    setVideoOpen(true);
     // handleVideoPlaying();
   };
   return (
@@ -111,7 +110,7 @@ export default function BannerVideo() {
       <ModalVideo
         channel='vimeo'
         isOpen={videoOpen}
-        videoId='542794683'
+        videoId='546245610'
         autoplay={true}
         onClose={() => setVideoOpen(false)}
       />
@@ -161,8 +160,9 @@ const styles = {
       borderRadius: '1rem',
       zIndex: 1,
       // height: [310, 'auto'],
-      height: '30rem',
-      width: 'auto',
+      height: 'auto',
+      maxWidth: '100%',
+      width: '40rem',
     },
   },
   shapeBox: {
@@ -286,12 +286,14 @@ const styles = {
     width: '100%',
     // mb: [0, null, -6, null, null, '-40px', null, -3],
     // mt: 10,
-    mb: 10,
+    mb: [4, 0],
     mt: 10,
 
     img: {
       position: 'relative',
-      height: '80vh',
+      height: 'auto',
+      maxWidth: '80%',
+      // border: '5px solid red',
     },
   },
 };

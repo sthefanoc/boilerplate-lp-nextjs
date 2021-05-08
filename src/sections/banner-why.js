@@ -18,7 +18,7 @@ export default function BannerWhy() {
     <section sx={styles.banner} id='home'>
       <Container sx={styles.banner.container}>
         <Box sx={styles.banner.contentBox}>
-          <Heading as='h1' sx={styles.banner.heroTitle}>
+          <Heading as='h2' sx={styles.banner.heroTitle}>
             Então por que abrir ao público?
             <Image src={BannerImg} />
           </Heading>
@@ -99,7 +99,8 @@ const styles = {
     img: {
       height: '20vh',
       ml: 10,
-      right: 10,
+      right: ['0rem', '1rem', '2rem', '3rem', '15rem'],
+      top: '-2rem',
       position: 'absolute',
     },
     imageBox: {
