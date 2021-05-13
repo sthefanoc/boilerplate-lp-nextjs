@@ -40,7 +40,7 @@ export default function MobileDrawer() {
       }
       open={isDrawerOpen}
       toggleHandler={() => setIsDrawerOpen((prevState) => !prevState)}
-      closeButton={<IoMdClose size='24px' color='#000000' />}
+      closeButton={<IoMdClose size='24px' color='#FFF' />}
       drawerStyle={styles.drawer}
       closeBtnStyle={styles.close}
     >
@@ -50,6 +50,7 @@ export default function MobileDrawer() {
             {menuItems.map((menuItem, i) => (
               <Link
                 activeClass='active'
+                className='drawer-link'
                 to={menuItem.path}
                 spy={true}
                 smooth={true}

@@ -5,6 +5,7 @@ import {
   jsx,
   Container,
   Box,
+  Link,
   Grid,
   Text,
   Heading,
@@ -15,6 +16,8 @@ import { keyframes } from '@emotion/core';
 import TextFeature from 'components/text-feature';
 import ModalVideo from 'react-modal-video';
 import { IoIosPlay } from 'react-icons/io';
+
+import { checkoutLink } from '../utils/variables';
 
 import ServiceThumb from 'assets/robopremiado-video.jpg';
 import shapePattern from 'assets/shape-pattern1.png';
@@ -51,38 +54,97 @@ export default function BannerVideo() {
   const [videoWatched, setVideoWatched] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
 
-  // useEffect(() => {
-  //   let sections = document.querySelectorAll('section');
-  //   for (let i = 0; i < sections.length; i++) {
-  //     if (sections[i].id == 'banner-video' || sections[i].id == 'home') {
-  //       console.log('eeeeeeeeeee');
-  //     } else {
-  //       sections[i] ? (sections[i].style.display = 'none') : '';
-  //     }
-  //   }
-  //   document.querySelector('#banner-logo').style.display = 'none';
-  //   let header = document.querySelector('header');
-  //   let footer = document.querySelector('footer');
-  //   Array.from(header.querySelectorAll('a')).map((item) => {
-  //     item.style.display = 'none';
-  //   });
-  //   Array.from(footer.querySelectorAll('a')).map((item) => {
-  //     item.style.display = 'none';
-  //   });
-  // }, []);
+  const cleanPage = () => {
+    let sections = document.querySelectorAll('section');
+    for (let i = 0; i < sections.length; i++) {
+      if (sections[i].id == 'banner-video' || sections[i].id == 'home') {
+        console.log('eeeeeeeeeee');
+      } else {
+        sections[i] ? (sections[i].style.display = 'none') : '';
+      }
+    }
+    document.querySelector('#banner-logo').style.display = 'none';
+    document.querySelector('#buy-now-btn').style.display = 'none';
+    let header = document.querySelector('header');
+    let footer = document.querySelector('footer');
+    Array.from(header.querySelectorAll('a')).map((item) => {
+      item.style.display = 'none';
+    });
+    Array.from(footer.querySelectorAll('a')).map((item) => {
+      item.style.display = 'none';
+    });
+    Array.from(document.querySelectorAll('.drawer-link')).map((item) => {
+      item.style.display = 'none';
+    });
+  };
+
+  const showPage = () => {
+    console.log('show!');
+    window.localStorage.setItem('robopremiado-video', 'true');
+    let sections = document.querySelectorAll('section');
+    for (let i = 0; i < sections.length; i++) {
+      if (sections[i].id == 'banner-video' || sections[i].id == 'home') {
+        console.log('eeeeeeeeeee');
+      } else {
+        sections[i] ? (sections[i].style.display = null) : '';
+      }
+    }
+    document.querySelector('#banner-logo').style.display = null;
+    document.querySelector('#buy-now-btn').style.display = null;
+    let header = document.querySelector('header');
+    let footer = document.querySelector('footer');
+    Array.from(header.querySelectorAll('a')).map((item) => {
+      item.style.display = null;
+    });
+    Array.from(footer.querySelectorAll('a')).map((item) => {
+      item.style.display = null;
+    });
+    Array.from(document.querySelectorAll('.drawer-link')).map((item) => {
+      item.style.display = null;
+    });
+  };
+
+  useEffect(() => {
+    if (
+      window.localStorage.getItem('robopremiado-video') == 'false' ||
+      window.localStorage.getItem('robopremiado-video') == null
+    ) {
+      cleanPage();
+    }
+  }, []);
+
+  const triggerCount = () => {
+    setTimeout(() => {
+      showPage();
+      // setVideoWatched({ videoWatched: true });
+      // if (videoWatched) {
+      //   showPage();
+      // }
+    }, 120 * 1000);
+  };
 
   const handleVideoPlaying = () => {
     document.querySelector('.vp-controls-wrapper').classList.add('hidden');
   };
+  const checkVideoDuration = () => {
+    const video = document.querySelector('video');
+    console.log(video.currentTime);
+    return video.currentTime;
+  };
   const handleClick = (e) => {
     e.preventDefault();
     setVideoOpen(true);
-    let iframe = document.querySelector('iframe');
-    iframe.contentWindow.document.querySelector(
-      '.vp-controls-wrapper'
-    ).style.display = 'none';
+    triggerCount();
+    // let iframe = document.querySelector('iframe');
+    // iframe.contentWindow.document.querySelector(
+    //   '.vp-controls-wrapper'
+    // ).style.display = 'none';
     // handleVideoPlaying();
   };
+  const btnName = 'Compre agora';
+  const btnURL = checkoutLink;
+  // const btnURL = 'https://go.kiwify.com.br/Dz8Kudp';
+
   return (
     <section sx={{ variant: 'section.services' }} id='banner-video'>
       <Container sx={styles.containerBox} style={{ justifyContent: 'center' }}>
@@ -127,6 +189,18 @@ export default function BannerVideo() {
         autoplay={true}
         onClose={() => setVideoOpen(false)}
       />
+      <Box sx={styles.btnBox}>
+        <Link href={btnURL} variant='default'>
+          <Button
+            id='buy-now-btn'
+            aria-label={btnName}
+            sx={styles.btn}
+            style={{ fontSize: '2rem' }}
+          >
+            {btnName}
+          </Button>
+        </Link>
+      </Box>
       <Box sx={styles.imageBox} id='banner-logo'>
         <Image src={BannerImg} alt='banner' />
       </Box>
@@ -168,8 +242,8 @@ const styles = {
     ml: 'auto',
     display: 'inline-flex',
     position: 'relative',
+    alignItems: 'flex-start',
     '> img': {
-      alignItems: 'flex-start',
       position: 'relative',
       borderRadius: '1rem',
       zIndex: 1,
@@ -292,12 +366,26 @@ const styles = {
       left: 0,
     },
   },
+  btnBox: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    mt: '2rem',
+  },
+  btn: {
+    // width: '40%',
+    height: 'auto',
+    fontSize: '3rem',
+    textAlign: 'center',
+  },
   imageBox: {
     // backgroundColor: 'red',
     justifyContent: 'center',
     textAlign: 'center',
     display: 'inline-flex',
     width: '100%',
+    alignItems: 'flex-start',
     // mb: [0, null, -6, null, null, '-40px', null, -3],
     // mt: 10,
     mb: [4, 0],
@@ -306,7 +394,8 @@ const styles = {
     img: {
       position: 'relative',
       height: 'auto',
-      maxWidth: '80%',
+      width: '30%',
+      top: '-3rem',
       // border: '5px solid red',
     },
   },

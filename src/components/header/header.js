@@ -3,6 +3,7 @@
 import { jsx, Container, Flex, Button } from 'theme-ui';
 import { keyframes } from '@emotion/core';
 import { Link } from 'react-scroll';
+import { checkoutLink } from '../../utils/variables';
 import Logo from 'components/logo';
 import LogoDark from 'assets/robopremiado-logo.png';
 import MobileDrawer from './mobile-drawer';
@@ -28,14 +29,16 @@ export default function Header({ className }) {
             </Link>
           ))}
         </Flex>
-        <a href='https://app.monetizze.com.br/checkout/PDP172047'>
+        {/* https://app.monetizze.com.br/checkout/PDP172047 */}
+        {/* https://go.kiwify.com.br/Dz8Kudp */}
+        <a href={checkoutLink}>
           <Button
             className='donate__btn'
             variant='secondary'
             aria-label='Get Started'
-            style={{ marginLeft: 'auto' }}
+            sx={styles.container.mainBtn}
           >
-            Ganhe Sorteios!
+            Compre Agora
           </Button>
         </a>
 
@@ -90,6 +93,14 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
+    mainBtn: {
+      backgroundColor: 'primary',
+      color: '#FFF',
+      transition: 'all 0.25s',
+      '&:hover': {
+        fontSize: 3,
+      },
+    },
   },
   logo: {
     maxWidth: '6rem',

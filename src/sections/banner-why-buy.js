@@ -7,6 +7,7 @@ import { Container, Box, Heading, Text, Image, Button } from 'theme-ui';
 
 import BannerImg from 'assets/croped_logo.png';
 import BannerPremios from 'assets/premiosdesorteio.png';
+import SeloGarantia from 'assets/selogarantia.png';
 
 import ShapeLeft from 'assets/shape-left.png';
 import ShapeRight from 'assets/shape-right.png';
@@ -34,6 +35,14 @@ export default function BannerWhyBuy() {
         </Box>
         <Box sx={styles.banner.imageBox}>
           <Image src={BannerPremios} alt='banner' />
+        </Box>
+        <Box sx={styles.banner.imageBox}>
+          <Image
+            src={SeloGarantia}
+            alt='selo de garantia'
+            sx={styles.banner.imageBox.smallImg}
+            style={{ width: '10rem', marginTop: '3rem' }}
+          />
         </Box>
       </Container>
     </section>
@@ -113,6 +122,11 @@ const styles = {
         position: 'relative',
         height: 'auto',
         width: ['100%', '80%'],
+      },
+      smallImg: {
+        position: 'relative',
+        height: 'auto',
+        borderRadius: '30px',
       },
     },
   },

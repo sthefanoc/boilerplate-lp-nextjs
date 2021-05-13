@@ -26,8 +26,8 @@ export default function BannerVideo() {
           <Text as='p' sx={styles.banner.secondaryText}>
             os melhores <span>sorteios</span> no instagram
           </Text>
-          <Text as='p' sx={styles.banner.secondaryText}>
-            <div>Assista ao vídeo para liberar a página</div>
+          <Text as='div' sx={styles.banner.secondaryText}>
+            <p>Assista ao vídeo para liberar a página</p>
           </Text>
 
           {/* <Button variant='primary'>Explore</Button> */}

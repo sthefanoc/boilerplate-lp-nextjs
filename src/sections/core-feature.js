@@ -2,6 +2,7 @@
 /** @jsx jsx */
 import { jsx, Container, Box, Image } from 'theme-ui';
 import TextFeature from 'components/text-feature';
+import { checkoutLink } from '../utils/variables';
 // import Image from 'components/image';
 
 import FeatureThumb from 'assets/facildeusar.png';
@@ -12,10 +13,12 @@ const data = {
   title: 'Só precisa de um computador',
   description:
     'Sem configurações complicadas. Apenas um computador que seja capaz de acessar o Google Chrome já resolve tudo que o robô precisa para funcionar. Não fique fora dessa.',
-  btnName: 'Ganhar Sorteios!',
-  btnURL: 'https://app.monetizze.com.br/checkout/PDP172047',
+  btnName: 'Compre Agora',
+  btnURL: { checkoutLink },
 };
 
+// btnURL: 'https://app.monetizze.com.br/checkout/PDP172047',
+// btnURL: 'https://go.kiwify.com.br/Dz8Kudp',
 export default function CoreFeature() {
   return (
     <section sx={{ variant: 'section.coreFeature' }}>

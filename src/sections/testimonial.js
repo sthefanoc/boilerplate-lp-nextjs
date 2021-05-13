@@ -1,10 +1,21 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Container, Heading, Text, Box, Image } from 'theme-ui';
+import {
+  jsx,
+  Container,
+  Heading,
+  Text,
+  Box,
+  Image,
+  Link,
+  Button,
+} from 'theme-ui';
 import SectionHeader from 'components/section-header';
 import Rating from 'components/rating';
 import ButtonGroup from 'components/button-group';
 import Carousel from 'react-multi-carousel';
+
+import { checkoutLink } from '../utils/variables';
 
 import Avatar1 from 'assets/testimonial/avatar1.png';
 import Avatar2 from 'assets/testimonial/avatar2.png';
@@ -108,6 +119,9 @@ const carouselParams = {
 const testimonialImages = [ScreenShot01, ScreenShot02, ScreenShot03];
 
 export default function TestimonialCard() {
+  const btnName = 'Compre agora';
+  const btnURL = checkoutLink;
+  // const btnURL = 'https://go.kiwify.com.br/Dz8Kudp';
   return (
     <section id='testemunhos' sx={{ variant: 'section.testimonial' }}>
       <Container css={{ textAlign: 'center' }}>
@@ -115,12 +129,23 @@ export default function TestimonialCard() {
       </Container>
       <Box sx={styles.carouselWrapper}>
         <Carousel {...carouselParams}>
-          {testimonialImages.map((item) => (
-            <Box sx={styles.carouselWrapper.imageBox}>
+          {testimonialImages.map((item, i) => (
+            <Box sx={styles.carouselWrapper.imageBox} key={i}>
               <Image src={item} />
             </Box>
           ))}
         </Carousel>
+        <Box sx={styles.btnBox}>
+          <Link href={btnURL} variant='default'>
+            <Button
+              aria-label={btnName}
+              sx={styles.btn}
+              style={{ fontSize: '2rem' }}
+            >
+              {btnName}
+            </Button>
+          </Link>
+        </Box>
       </Box>
     </section>
   );
@@ -171,6 +196,19 @@ const styles = {
         },
       },
     },
+  },
+  btnBox: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    mt: '3rem',
+  },
+  btn: {
+    // width: '40%',
+    height: 'auto',
+    fontSize: '3rem',
+    textAlign: 'center',
   },
   reviewCard: {
     boxShadow: '0px 0px 1px rgba(38, 78, 118, 0.35)',
